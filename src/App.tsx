@@ -10,7 +10,7 @@ function App() {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
    const category = useSelector(({ category }) => category)
   useEffect(()=>{
-    dispatch(GET_NEWS(category))
+    dispatch(GET_NEWS(category,1))
   },[category])
   return (
     <div className="wrapper">

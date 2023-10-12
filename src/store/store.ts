@@ -7,6 +7,7 @@ const initialState ={
     category: "general",
     newsList:[],
     linkId:1,
+    count:0,
 }
 
 const rootReducer = (state = initialState, action: any) => {
@@ -27,6 +28,12 @@ const rootReducer = (state = initialState, action: any) => {
         return {
           ...state,
           newsList: action.payload,
+        };
+      }
+      case "SET_TOTAL_COUNT": {
+        return {
+          ...state,
+          count: action.payload,
         };
       }
       default:

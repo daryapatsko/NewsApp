@@ -1,20 +1,8 @@
 import React from 'react'
+import "./style.css"
 
-interface INewsItem {
-  author: string,
-  content: string,
-  description: string,
-  publishedAt: string,
-  source: {
-    id: string,
-    name: string,
-  },
-  title: string,
-  url: string,
-  urlToImage: string,
-}
 
-const NewsItem = ({item}:any) => {
+const NewsItem = ({ item }: any) => {
   const webSiteUrl = item.url
   const webSite = webSiteUrl.split('http://').pop().split('/')[2]
 
@@ -22,7 +10,7 @@ const NewsItem = ({item}:any) => {
   const formatDate = date.replace('T', ' ')
   const formatTime = formatDate.replace('Z', " ")
   return (
-    <a href="#" className='news-item'>
+    <div className='news-item'>
       <div className='news-item__box'>
         <div className="news-item__img">
           <img src={item.urlToImage} alt={item.title} />
@@ -37,11 +25,13 @@ const NewsItem = ({item}:any) => {
           </div>
           <p className="news-item__description">{item.description}</p>
           <div className="news-item__details">
-            <p>Published At:</p>{formatTime}
+            <p className='publish'>Published At:</p>
+            <p className='time__publish'>{formatTime}</p>
           </div>
+          <button className="news-item__view-more">View More</button>
         </div>
       </div>
-    </a>
+    </div>
   )
 }
 

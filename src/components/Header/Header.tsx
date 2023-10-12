@@ -1,9 +1,17 @@
 import React,{useState} from 'react'
 import { StyledHeaderContainer,
 StyledHeaderNavBar,
-StyledHeaderNavList,StyledHeaderNavItem } from './styled'
-import "./Header.css"
+StyledHeaderNavList,
+StyledHeaderNavItem,
+StyledHeaderImgContainer,
+StyledHeaderImg,
+StyledHeaderSearchContainer,
+StyledHeaderSearch} from './styled'
 import { useDispatch } from 'react-redux'
+import logo_nav from "../../assets/img/logo_nav.svg"
+import search from "../../assets/img/search-img.svg"
+
+
 
 
 const links = [
@@ -25,6 +33,9 @@ const handleClick = (id: number,value: string) =>{
 }
   return (
       <StyledHeaderContainer>
+        <StyledHeaderImgContainer>
+          <StyledHeaderImg src={logo_nav} alt="logo-img" />
+        </StyledHeaderImgContainer>
         <StyledHeaderNavBar>
             <StyledHeaderNavList>
               {links.map((link) =>(
@@ -35,6 +46,10 @@ const handleClick = (id: number,value: string) =>{
               ))}
             </StyledHeaderNavList>
         </StyledHeaderNavBar>
+        <StyledHeaderSearchContainer>
+          <StyledHeaderSearch src={search} alt="search-img"/>
+        </StyledHeaderSearchContainer>
+        
       </StyledHeaderContainer>
   )
 }

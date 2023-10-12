@@ -3,38 +3,18 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-
-ul,
-ol {
   padding: 0;
-}
-
-
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-ul[class],
-ol[class],
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
   margin: 0;
 }
+
 
 
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 
@@ -57,4 +37,7 @@ button,
 textarea,
 select {
   font: inherit;
+}
+.wrapper{
+  padding: 0 20px;
 }
