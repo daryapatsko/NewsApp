@@ -10,6 +10,7 @@ StyledHeaderSearch} from './styled'
 import { useDispatch } from 'react-redux'
 import logo_nav from "../../assets/img/logo_nav.svg"
 import search from "../../assets/img/search-img.svg"
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -25,6 +26,7 @@ const links = [
 ]
 const Header = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [active,setActive] = useState(1)
    
 const handleClick = (id: number,value: string) =>{
@@ -33,8 +35,11 @@ const handleClick = (id: number,value: string) =>{
 }
   return (
       <StyledHeaderContainer>
-        <StyledHeaderImgContainer>
-          <StyledHeaderImg src={logo_nav} alt="logo-img" />
+        <StyledHeaderImgContainer onClick={()=>{
+           dispatch({ type: "TOGGLE_CATEGORY", payload: "general" })
+            navigate('/general')
+          }}>
+          <StyledHeaderImg src={logo_nav} alt="logo-img"/>
         </StyledHeaderImgContainer>
         <StyledHeaderNavBar>
             <StyledHeaderNavList>

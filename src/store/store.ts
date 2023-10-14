@@ -3,21 +3,19 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState ={
-    theme: 'light',
     category: "general",
     newsList:[],
     linkId:1,
     count:0,
+    isLoading:false,
+    modalView:{
+      isOpenModal:false,
+      item:{}
+    },
 }
 
 const rootReducer = (state = initialState, action: any) => {
     switch (action.type) {
-      case "TOGGLE_THEME": {
-        return {
-          ...state,
-          theme: action.payload,
-        };
-      }
       case "TOGGLE_CATEGORY": {
         return {
           ...state,
@@ -34,6 +32,12 @@ const rootReducer = (state = initialState, action: any) => {
         return {
           ...state,
           count: action.payload,
+        };
+      }
+      case "SET_LOADING": {
+        return {
+          ...state,
+          isLoading: !state.isLoading,
         };
       }
       default:

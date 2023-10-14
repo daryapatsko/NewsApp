@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.css"
+import Modal from '../../Modal/Modal'
+
 
 
 const NewsItem = ({ item }: any) => {
   const webSiteUrl = item.url
   const webSite = webSiteUrl.split('http://').pop().split('/')[2]
-
+  const key = item.source.name
   const date = item.publishedAt
   const formatDate = date.replace('T', ' ')
   const formatTime = formatDate.replace('Z', " ")
+  const [isOpenModal, setIsOpenModal] = useState(false)
+  const handleViewMoreClick = () => {
+    setIsOpenModal(true)
+  }
+  const closeModal = () => {
+    setIsOpenModal(false)
+  }
   return (
-    <div className='news-item'>
+    <div className='news-item' key={key}>
       <div className='news-item__box'>
         <div className="news-item__img">
           <img src={item.urlToImage} alt={item.title} />
@@ -18,7 +27,7 @@ const NewsItem = ({ item }: any) => {
         <div className="news-item__content">
           <div className="news-item__source">
             <img src={`https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${webSite}&size=16`} alt={item.source.id} />
-            <span>{item.source.name}</span>
+            <a href={item.url}><span>{item.source.name}</span></a>
           </div>
           <div className="news-item__title">
             <h2>{item.title}</h2>
@@ -28,9 +37,12 @@ const NewsItem = ({ item }: any) => {
             <p className='publish'>Published At:</p>
             <p className='time__publish'>{formatTime}</p>
           </div>
-          <button className="news-item__view-more">View More</button>
+          <button className="news-item__view-more" onClick={handleViewMoreClick}>View More</button>
         </div>
       </div>
+      {isOpenModal && (
+        <Modal item={item} closeModal={closeModal}/>
+      )}
     </div>
   )
 }

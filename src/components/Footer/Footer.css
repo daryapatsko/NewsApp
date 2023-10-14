@@ -1,0 +1,22 @@
+.footer__container{
+    background-color: #0E1E32;
+    width: 100%;
+    color: #fff;
+}
+.footer__box{
+    gap: 30px;
+    padding: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.links__container{
+    display: flex;
+    flex-direction: column;
+}
+.center__box-footer span{
+    cursor: pointer;
+}
+.center__box-footer span:hover{
+    color:red;
+}

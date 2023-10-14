@@ -41,10 +41,11 @@ border-radius:2em;
 background: #eee;
 transition: all 0.3s;
 &:hover{
-    color:red;
+    font-weight: 700;
 }
 &.active{
-    background:#ccc;
+    background-color: #dfcece;
+    font-weight: 700;
 }
 &.inactive:hover{
     background:#dddddd;

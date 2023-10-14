@@ -5,17 +5,28 @@ import './App.css';
 import MainPage from './pages/MainPage/MainPage';
 import { GET_NEWS } from './actions/actions';
 import { useDispatch,useSelector } from 'react-redux';
+import {Routes, Route, useNavigate} from "react-router-dom"
+
+
 
 function App() {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
+  const navigate = useNavigate()
    const category = useSelector(({ category }) => category)
   useEffect(()=>{
     dispatch(GET_NEWS(category,1))
-  },[category])
+    navigate(`/${category}`)
+  }, [category,1])
+  // useEffect(()=>{
+    
+  // }, [category,navigate])
   return (
-    <div className="wrapper">
-      <MainPage></MainPage>
-    </div>
+
+    <Routes>
+      <Route path="/" element={<MainPage/>}></Route>
+      <Route path="/:category" element={<MainPage/>}></Route>
+    </Routes>
+    
   );
 }
 
