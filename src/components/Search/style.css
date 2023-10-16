@@ -1,0 +1,33 @@
+.search__container{
+    display: flex;
+    flex-direction: column;
+}
+.search_box{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.link__container{
+    padding: 10px 0;
+}
+.search__category{
+    padding-right:10px ;
+    font-weight: 700;
+}
+
+.input__search{
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+width: 80%;
+color:rgb(138, 85, 20);
+
+}
+.input__search::placeholder{
+   color:rgb(138, 85, 20);
+}
+.news__item{
+    max-width: 750px;
+    margin: 10px auto;
+}

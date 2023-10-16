@@ -12,6 +12,7 @@ const initialState ={
       isOpenModal:false,
       item:{}
     },
+    searchNews:[],
 }
 
 const rootReducer = (state = initialState, action: any) => {
@@ -32,6 +33,12 @@ const rootReducer = (state = initialState, action: any) => {
         return {
           ...state,
           count: action.payload,
+        };
+      }
+      case "SET_SEARCH_NEWS": {
+        return {
+          ...state,
+          searchNews: action.payload,
         };
       }
       case "SET_LOADING": {

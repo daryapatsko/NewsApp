@@ -8,13 +8,12 @@
 }
 
 
-
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  padding: 0;
-  margin: 0;
-  font-family: 'Nunito Sans', sans-serif;
+html,
+body,
+#root{
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -37,4 +36,7 @@ button,
 textarea,
 select {
   font: inherit;
+}
+main{
+  flex: 1 1 auto;
 }

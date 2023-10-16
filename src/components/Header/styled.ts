@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledHeaderContainer = styled.div`
-width:100%;
 max-height:70px;
 text-align:center;
 width:100%;
@@ -30,7 +29,6 @@ export const StyledHeaderNavList = styled.ul`
 padding:20px;
 list-style:none;
 display:flex;
-font-family:'Nunito Sans', sans-serif;
 `
 
 export const StyledHeaderNavItem = styled.li`
@@ -41,11 +39,11 @@ border-radius:2em;
 background: #eee;
 transition: all 0.3s;
 &:hover{
-    font-weight: 700;
+    background-color: grey;
+}
 }
 &.active{
     background-color: #dfcece;
-    font-weight: 700;
 }
 &.inactive:hover{
     background:#dddddd;
@@ -53,8 +51,12 @@ transition: all 0.3s;
 `
 export const StyledHeaderSearchContainer = styled.div`
 object-fit:cover;
+padding:5px;
+&:hover{
+    background-color: #dfcece;
+    border-radius:10px;
+}
 `
 export const StyledHeaderSearch = styled.img`
 cursor:pointer;
-margin-left:20px;
 `

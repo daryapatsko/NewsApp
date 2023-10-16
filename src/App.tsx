@@ -3,6 +3,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import './App.css';
 import MainPage from './pages/MainPage/MainPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 import { GET_NEWS } from './actions/actions';
 import { useDispatch,useSelector } from 'react-redux';
 import {Routes, Route, useNavigate} from "react-router-dom"
@@ -25,6 +26,7 @@ function App() {
     <Routes>
       <Route path="/" element={<MainPage/>}></Route>
       <Route path="/:category" element={<MainPage/>}></Route>
+      <Route path="/search" element={<SearchPage/>}></Route>
     </Routes>
     
   );
