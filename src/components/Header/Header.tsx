@@ -7,12 +7,13 @@ import {
   StyledHeaderImgContainer,
   StyledHeaderImg,
   StyledHeaderSearchContainer,
-  StyledHeaderSearch
+  StyledHeaderSearch,
 } from './styled'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import logo_nav from "../../assets/img/logo_nav.svg"
 import search from "../../assets/img/search-img.svg"
 import { useLocation, useNavigate } from 'react-router-dom'
+import BurgerMenu from './BurgerMenu/BurgerMenu'
 
 
 
@@ -31,11 +32,14 @@ const Header = () => {
   const navigate = useNavigate()
   const [active, setActive] = useState(1)
   const location = useLocation()
+  const activeBurger = useSelector(({ activeBurger }) => activeBurger)
+
 
   const handleClick = (id: number, value: string) => {
     dispatch({ type: "TOGGLE_CATEGORY", payload: value })
     setActive(id)
   }
+
 
   const isSearchPage = location.pathname === "/search"
   return (
@@ -47,7 +51,7 @@ const Header = () => {
         <StyledHeaderImg src={logo_nav} alt="logo-img" />
       </StyledHeaderImgContainer>
       <StyledHeaderNavBar>
-        <StyledHeaderNavList>
+        <StyledHeaderNavList className= {activeBurger ? "open" : "close"} >
           {links.map((link) => (
             !isSearchPage && (
               <StyledHeaderNavItem key={link.id}
@@ -63,7 +67,7 @@ const Header = () => {
       <StyledHeaderSearchContainer onClick={() => navigate('/search')}>
         <StyledHeaderSearch src={search} alt="search-img" />
       </StyledHeaderSearchContainer>
-
+      {!isSearchPage && <BurgerMenu/>}
     </StyledHeaderContainer>
   )
 }

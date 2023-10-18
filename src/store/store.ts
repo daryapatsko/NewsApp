@@ -13,6 +13,7 @@ const initialState ={
       item:{}
     },
     searchNews:[],
+    activeBurger:'',
 }
 
 const rootReducer = (state = initialState, action: any) => {
@@ -39,6 +40,12 @@ const rootReducer = (state = initialState, action: any) => {
         return {
           ...state,
           searchNews: action.payload,
+        };
+      }
+      case "TOGGLE_BURGER_MENU": {
+        return {
+          ...state,
+          activeBurger: action.payload,
         };
       }
       case "SET_LOADING": {

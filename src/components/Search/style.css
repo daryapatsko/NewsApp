@@ -5,7 +5,7 @@
 .search_box{
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
+    padding: 20px 10px;
 }
 .link__container{
     padding: 10px 0;
