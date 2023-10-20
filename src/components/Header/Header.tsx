@@ -10,7 +10,7 @@ import {
   StyledHeaderSearch,
 } from './styled'
 import { useDispatch,useSelector } from 'react-redux'
-import logo_nav from "../../assets/img/logo_nav.svg"
+import logo from "../../assets/img/logo.png"
 import search from "../../assets/img/search-img.svg"
 import { useLocation, useNavigate } from 'react-router-dom'
 import BurgerMenu from './BurgerMenu/BurgerMenu'
@@ -48,7 +48,7 @@ const Header = () => {
         dispatch({ type: "TOGGLE_CATEGORY", payload: "general" })
         navigate('/general')
       }}>
-        <StyledHeaderImg src={logo_nav} alt="logo-img" />
+        <StyledHeaderImg src={logo} alt="logo-img" />
       </StyledHeaderImgContainer>
       <StyledHeaderNavBar>
         <StyledHeaderNavList className= {activeBurger ? "open" : "close"} >

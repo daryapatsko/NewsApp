@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import "./style.css"
 import Modal from '../../Modal/Modal'
+import { INewsItem } from '../../../interfaces'
 
 
 
-const NewsItem = ({ item }: any) => {
+const NewsItem:React.FC<{item:INewsItem}> = ({ item }) => {
   const webSiteUrl = item.url
-  const webSite = webSiteUrl.split('http://').pop().split('/')[2]
+  const webSite = webSiteUrl ? webSiteUrl.split('http://').pop()?.split('/')[2] : '';
   const key = item.source.name
   const date = item.publishedAt
   const formatDate = date.replace('T', ' ')
@@ -15,6 +16,7 @@ const NewsItem = ({ item }: any) => {
   const handleViewMoreClick = () => {
     setIsOpenModal(true)
   }
+
   const closeModal = () => {
     setIsOpenModal(false)
   }

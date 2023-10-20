@@ -10,6 +10,7 @@ import {Routes, Route, useNavigate} from "react-router-dom"
 
 
 
+
 function App() {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate()
@@ -18,15 +19,14 @@ function App() {
     dispatch(GET_NEWS(category,1))
     navigate(`/${category}`)
   }, [category,1])
-  // useEffect(()=>{
-    
-  // }, [category,navigate])
+ 
   return (
 
     <Routes>
       <Route path="/" element={<MainPage/>}></Route>
       <Route path="/:category" element={<MainPage/>}></Route>
       <Route path="/search" element={<SearchPage/>}></Route>
+      
     </Routes>
     
   );

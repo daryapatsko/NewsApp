@@ -6,20 +6,9 @@ import { useDispatch } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux';
 import { GET_NEWS } from '../../actions/actions'
+import { INewsItem } from '../../interfaces'
 
-interface INewsItem {
-  author: string,
-  content: string,
-  description: string,
-  publishedAt: string,
-  source: {
-    id: string,
-    name: string,
-  },
-  title: string,
-  url: string,
-  urlToImage: string,
-}
+
 
 const NewsList = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

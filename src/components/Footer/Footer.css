@@ -12,11 +12,31 @@
 }
 .links__container{
     display: flex;
-    flex-direction: column;
+
 }
-.center__box-footer span{
+.links__container li{
+    padding-right: 10px;
+}
+
+
+.links-social__container{
+    display: flex;
+
+}
+.links-social__container li{
     cursor: pointer;
+    padding:5px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
 }
-.center__box-footer span:hover{
-    color:red;
+.links-social__container li:hover{
+    background-color: rgb(233, 207, 176);
+}
+a{
+    transition: all 0.5s ease-in-out;
+}
+a:hover{
+ color: rgb(233, 207, 176);
 }

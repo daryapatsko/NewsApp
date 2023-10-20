@@ -7,7 +7,6 @@ const initialState ={
     newsList:[],
     linkId:1,
     count:0,
-    isLoading:false,
     modalView:{
       isOpenModal:false,
       item:{}
@@ -46,12 +45,6 @@ const rootReducer = (state = initialState, action: any) => {
         return {
           ...state,
           activeBurger: action.payload,
-        };
-      }
-      case "SET_LOADING": {
-        return {
-          ...state,
-          isLoading: !state.isLoading,
         };
       }
       default:

@@ -6,6 +6,7 @@ import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux';
 import NewsItem from '../NewsList/NewsItem/NewsItem'
 import { Link } from 'react-router-dom'
+import { INewsItem } from '../../interfaces'
 
 const Search = () => {
     const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
@@ -14,15 +15,15 @@ const Search = () => {
     const [filteredNews, setFilteredNews] = useState([])
     const searchNews = useSelector(({ searchNews }) => searchNews)
 
-    const handleSearchChange = (event: any) => {
+    const handleSearchChange = (event:React.ChangeEvent<HTMLInputElement>) => {
         const search = event.target.value;
         setSearchValue(search);
-        const filteredArticles = searchNews.filter((news: any) => news.title.toLowerCase().includes(search.toLowerCase()));
+        const filteredArticles = searchNews.filter((news: INewsItem) => news.title.toLowerCase().includes(search.toLowerCase()));
         setFilteredNews(filteredArticles);
 
     }
     console.log(filteredNews)
-    const handleCategoryChange = (event: any) => {
+    const handleCategoryChange = (event:React.ChangeEvent<HTMLSelectElement>) => {
         dispatch(GET_SEARCH_NEWS(categorySearch));
         setCategorySearch(event.target.value)
     }
@@ -59,7 +60,7 @@ const Search = () => {
                         <p>Please enter category...</p>
                     </div>
                 }
-                {filteredNews.map((news: any) => (
+                {filteredNews.map((news: INewsItem) => (
                     <div className="news__item">
                         <NewsItem item={news} />
                     </div>

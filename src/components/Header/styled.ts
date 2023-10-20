@@ -15,6 +15,7 @@ align-items:center;
 export const StyledHeaderImgContainer = styled.div`
 padding:10px;
 cursor:pointer;
+max-width:90px;
 `
 export const StyledHeaderImg = styled.img`
 object-fit:cover;

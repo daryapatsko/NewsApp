@@ -10,12 +10,9 @@ import {
     StyledModalDescription
 } from './styled'
 import { Link } from 'react-router-dom'
+import { IModal } from '../../interfaces'
 
 
-interface IModal {
-    item: any,
-    closeModal: () => void
-}
 
 
 const Modal = ({ item, closeModal }: IModal) => {
