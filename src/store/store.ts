@@ -13,6 +13,8 @@ const initialState ={
     },
     searchNews:[],
     activeBurger:'',
+    isLoading:false,
+    theme:'light',
 }
 
 const rootReducer = (state = initialState, action: any) => {
@@ -45,6 +47,18 @@ const rootReducer = (state = initialState, action: any) => {
         return {
           ...state,
           activeBurger: action.payload,
+        };
+      }
+      case "SET_LOADING": {
+        return {
+          ...state,
+          isLoading: !state.isLoading,
+        };
+      }
+      case "TOGGLE_THEME": {
+        return {
+          ...state,
+          theme: action.payload,
         };
       }
       default:

@@ -1,3 +1,5 @@
+import { MouseEvent } from "react";
+
 export interface IModal {
     item: any,
     closeModal: () => void
@@ -15,3 +17,6 @@ export interface INewsItem {
     url: string,
     urlToImage: string,
 }
+export type ThemeProp = {
+    onClick:(e:MouseEvent<SVGElement>) => void;
+  }

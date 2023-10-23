@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeaderContainer = styled.div`
+margin-top:10px;
 max-height:70px;
 text-align:center;
 width:100%;
@@ -12,10 +13,13 @@ align-items:center;
 }
 
 `
-export const StyledHeaderImgContainer = styled.div`
+export const StyledHeaderImgContainer = styled.div<{theme: 'light' | 'dark'}>`
 padding:10px;
 cursor:pointer;
-max-width:90px;
+max-width:80px;
+border-radius:${({theme}) => theme === 'light' ? 'none' : '30%'};
+background-color: ${({theme}) => theme === 'light' ? 'none' : '#fff'};
+
 `
 export const StyledHeaderImg = styled.img`
 object-fit:cover;
@@ -53,30 +57,33 @@ transition:all 0.5s ease-in-out;
   }
 `
 
-export const StyledHeaderNavItem = styled.li`
+export const StyledHeaderNavItem = styled.li<{theme: 'light' | 'dark'}>`
 padding:10px;
 cursor:pointer;
 margin:5px;
 border-radius:2em;
-background: #eee;
+background-color:${({theme}) => theme === 'light' ? '#8e6635' : 'grey'};
 transition: all 0.3s;
+color: ${({theme}) => theme === 'light' ? '#000000' : '#fff'};
 &:hover{
-    background-color: grey;
+    background-color: ${({theme}) => theme === 'light' ? '#caa06c' : '#432602'};
 }
 }
 &.active{
     background-color: #dfcece;
 }
 &.inactive:hover{
-    background:#dddddd;
+    background: ${({theme}) => theme === 'light' ? '#eee' : '#34210a'};
 }
 `
-export const StyledHeaderSearchContainer = styled.div`
+export const StyledHeaderSearchContainer = styled.div<{theme: 'light' | 'dark'}>`
 object-fit:cover;
 padding:5px;
+border-radius:10px;
+background-color: ${({theme}) => theme === 'light' ? '' : '#dfcece'};
 &:hover{
-    background-color: #dfcece;
-    border-radius:10px;
+    background-color: ${({theme}) => theme === 'light' ? '#dfcece' : '#432602'};
+   
 }
 @media screen and (max-width: 768px) {
     width:100%;

@@ -14,6 +14,8 @@ import logo from "../../assets/img/logo.png"
 import search from "../../assets/img/search-img.svg"
 import { useLocation, useNavigate } from 'react-router-dom'
 import BurgerMenu from './BurgerMenu/BurgerMenu'
+import { ThunkDispatch } from 'redux-thunk'
+import { AnyAction } from 'redux';
 
 
 
@@ -28,11 +30,12 @@ const links = [
   { id: 7, name: "Technology", value: "technology" },
 ]
 const Header = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate()
   const [active, setActive] = useState(1)
   const location = useLocation()
   const activeBurger = useSelector(({ activeBurger }) => activeBurger)
+  const theme = useSelector(({ theme }) => theme)
 
 
   const handleClick = (id: number, value: string) => {
@@ -44,7 +47,7 @@ const Header = () => {
   const isSearchPage = location.pathname === "/search"
   return (
     <StyledHeaderContainer>
-      <StyledHeaderImgContainer onClick={() => {
+      <StyledHeaderImgContainer theme={theme} onClick={() => {
         dispatch({ type: "TOGGLE_CATEGORY", payload: "general" })
         navigate('/general')
       }}>
@@ -54,7 +57,7 @@ const Header = () => {
         <StyledHeaderNavList className= {activeBurger ? "open" : "close"} >
           {links.map((link) => (
             !isSearchPage && (
-              <StyledHeaderNavItem key={link.id}
+              <StyledHeaderNavItem key={link.id} theme={theme}
                 className={active === link.id ? "active" : "inactive"}
                 onClick={() => {
                   handleClick(link.id, link.value)
@@ -64,7 +67,7 @@ const Header = () => {
           ))}
         </StyledHeaderNavList>
       </StyledHeaderNavBar>
-      <StyledHeaderSearchContainer onClick={() => navigate('/search')}>
+      <StyledHeaderSearchContainer theme={theme} onClick={() => navigate('/search')}>
         <StyledHeaderSearch src={search} alt="search-img" />
       </StyledHeaderSearchContainer>
       {!isSearchPage && <BurgerMenu/>}

@@ -4,6 +4,10 @@
 .search__container{
     display: flex;
     flex-direction: column;
+    padding-bottom: 20px;
+}
+.search__container.dark-theme{
+    color:#fff;
 }
 .search_box{
     display: flex;
@@ -12,7 +16,7 @@
 }
 
 select:focus option {
-    color: rgb(80, 15, 15);
+    color: #000000;
   }
 .link__container{
     padding: 10px 0;
@@ -28,11 +32,11 @@ select:focus option {
     border-radius: 10px;
     outline: none;
 width: 80%;
-color:rgb(138, 85, 20);
+color:#34210a;
 
 }
 .input__search::placeholder{
-   color:rgb(138, 85, 20);
+   color:#432602;
 }
 .news__item{
     max-width: 750px;

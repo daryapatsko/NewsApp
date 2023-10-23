@@ -14,6 +14,7 @@ const Search = () => {
     const [searchValue, setSearchValue] = useState('')
     const [filteredNews, setFilteredNews] = useState([])
     const searchNews = useSelector(({ searchNews }) => searchNews)
+    const theme = useSelector(({ theme }) => theme)
 
     const handleSearchChange = (event:React.ChangeEvent<HTMLInputElement>) => {
         const search = event.target.value;
@@ -22,14 +23,13 @@ const Search = () => {
         setFilteredNews(filteredArticles);
 
     }
-    console.log(filteredNews)
     const handleCategoryChange = (event:React.ChangeEvent<HTMLSelectElement>) => {
         dispatch(GET_SEARCH_NEWS(categorySearch));
         setCategorySearch(event.target.value)
     }
-
+    const searchClassTheme = `search__container ${theme === 'dark' ? "dark-theme" : 'light-theme'}`
     return (
-        <div className='search__container'>
+        <div className={searchClassTheme}>
             <div className="search_box">
                 <div className="link__container">
                     <Link to='/general'>Back to main page...</Link>

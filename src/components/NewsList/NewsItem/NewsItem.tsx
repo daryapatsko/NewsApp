@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./style.css"
 import Modal from '../../Modal/Modal'
 import { INewsItem } from '../../../interfaces'
+import { useSelector } from 'react-redux'
 
 
 
@@ -16,12 +17,13 @@ const NewsItem:React.FC<{item:INewsItem}> = ({ item }) => {
   const handleViewMoreClick = () => {
     setIsOpenModal(true)
   }
-
+  const theme = useSelector(({ theme }) => theme)
   const closeModal = () => {
     setIsOpenModal(false)
   }
+  const newClassTheme = `news-item ${theme === 'dark' ? "dark-theme" : 'light-theme'}`
   return (
-    <div className='news-item' key={key}>
+    <div className={newClassTheme} key={key}>
       <div className='news-item__box'>
         <div className="news-item__img">
           <img src={item.urlToImage} alt={item.title} />
