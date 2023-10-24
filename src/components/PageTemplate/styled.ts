@@ -6,5 +6,5 @@ height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-background-color: ${({theme}) => theme === 'light' ? '#fff' : '#000000'};
+background-color: ${({theme}) => theme === 'light' ? '#d7ccc8' : '#3e2723'};
 `

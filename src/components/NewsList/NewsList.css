@@ -13,29 +13,7 @@
     margin: 0 auto;
     padding: 2.5em;
 }
-.pagination{
-    padding: 10px;
-}
-.btn__pagination{
-    margin: 5px;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    cursor: pointer;
-    transition: all ease-in-out 0.3s;
 
-}
-.btn__pagination:hover{
-font-weight: 700;
-
-}
-.btn__pagination.active{
-    border-radius: 10px;
-    background-color: #dfcece;
-    font-weight: 700;
-   
-}
 @media screen and (max-width: 1024px)  {
     html{
         font-size: 14px;

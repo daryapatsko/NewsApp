@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const StyledHeaderBurgerContainer = styled.div`
 cursor:pointer;
+margin-left:10px;
 position:relative;
 top:0;
 right:0;
@@ -22,7 +23,7 @@ export const StyledHeaderBurgerBtn = styled.div`
 
 width:40px;
 height:3px;
-background:grey;
+background:#795548;
 border-radius:10px;
 transition: all 0.3s ease-in-out;
 
@@ -36,7 +37,7 @@ margin-right:auto;
 width:40px;
 height:4px;
 border-radius:10px;
-background-color:grey;
+background-color:#795548;
 transform:translateY(-14px);
 transition: all 0.3s ease-in-out;
 
@@ -51,7 +52,7 @@ transition: all 0.3s ease-in-out;
    width:40px;
    height:4px;
    border-radius:10px;
-   background-color:grey;
+   background-color:#795548;
    transform:translateY(14px);
    transition: all 0.3s ease-in-out;
 }

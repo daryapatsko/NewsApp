@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import Sun from "../../../assets/icons/sunIcon"
 import Moon from "../../../assets/icons/moonIcon"
 import { StyledThemeContainer,
-StyledThemeCheckboxContainer,
-StyledThemeCheckboxInput,
-StyledThemeCheckboxSpan } from './styledSwitchTheme'
-import { useDispatch } from 'react-redux'
+  StyledThemeButton
+ } from './styledSwitchTheme'
+import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 import { AnyAction } from 'redux';
 
@@ -13,22 +12,26 @@ import { AnyAction } from 'redux';
 const SwitchTheme = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const [isLight, setIsLight] = useState(true)
+  const theme = useSelector(({ theme }) => theme)
 
-const handleClickTheme = () =>{
-  const theme = isLight ? 'dark' : 'light';
-  dispatch({ type: "TOGGLE_THEME", payload: theme })
-  setIsLight(!isLight)  
-}
+
+const handleClickLight = () => {
+  if (!isLight) {
+    dispatch({ type: "TOGGLE_THEME", payload: 'light' });
+    setIsLight(true);
+  }
+};
+const handleClickDark = () => {
+  if (isLight) {
+    dispatch({ type: "TOGGLE_THEME", payload: 'dark' });
+    setIsLight(false);
+  }
+};
+
   return (
-    <StyledThemeContainer>
-      <Sun/>
-      <StyledThemeCheckboxContainer>
-        <StyledThemeCheckboxInput type="checkbox" 
-        onClick={handleClickTheme}
-        />
-        <StyledThemeCheckboxSpan/>
-      </StyledThemeCheckboxContainer>
-      <Moon/>
+    <StyledThemeContainer theme={theme}>
+      <StyledThemeButton  theme={theme} onClick={handleClickLight}><Sun theme={theme}/></StyledThemeButton>
+      <StyledThemeButton  theme={theme} onClick={handleClickDark}><Moon theme={theme}/></StyledThemeButton>
     </StyledThemeContainer>
   )
 }

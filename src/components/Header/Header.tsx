@@ -54,7 +54,7 @@ const Header = () => {
         <StyledHeaderImg src={logo} alt="logo-img" />
       </StyledHeaderImgContainer>
       <StyledHeaderNavBar>
-        <StyledHeaderNavList className= {activeBurger ? "open" : "close"} >
+        <StyledHeaderNavList theme={theme} className= {activeBurger ? "open" : "close"} >
           {links.map((link) => (
             !isSearchPage && (
               <StyledHeaderNavItem key={link.id} theme={theme}

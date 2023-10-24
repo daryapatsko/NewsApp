@@ -1,5 +1,5 @@
 .news-item{
-    background: #fff;
+    background: #efebe9;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     border-radius: 10px;
     overflow: hidden;
@@ -9,9 +9,10 @@
     transition: all ease-in-out 0.3s;
     display: flex;
     flex-direction: column;
+    max-width: 400px;
 }
 .news-item.dark-theme{
-    background-color: grey;
+    background-color: #6d4c41;
     color:#fff;
 }
 .news-item:hover{
@@ -59,14 +60,16 @@ font-weight: 700;
     font-style: italic;
 }
 .news-item__view-more{
+    margin-top: 10px;
     border: none;
-    background-color: #fff;
+    background-color: #8d6e63;
     padding: 10px;
     cursor: pointer;
     border-radius: 10px;
-    align-self: flex-end;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out;
 }
 .news-item__view-more:hover{
-    background-color: #dddddd;
-    color:#fff;
+    background-color: #d7ccc8;
+    color:#4e342e;
 }

@@ -62,18 +62,18 @@ padding:10px;
 cursor:pointer;
 margin:5px;
 border-radius:2em;
-background-color:${({theme}) => theme === 'light' ? '#8e6635' : 'grey'};
+background-color:${({theme}) => theme === 'light' ? '#8d6e63' : '#a1887f'};
 transition: all 0.3s;
 color: ${({theme}) => theme === 'light' ? '#000000' : '#fff'};
 &:hover{
-    background-color: ${({theme}) => theme === 'light' ? '#caa06c' : '#432602'};
-}
+    background-color: ${({theme}) => theme === 'light' ? 'yellow' : '#6d4c41'};
 }
 &.active{
-    background-color: #dfcece;
+    background-color: #5d4037;
+    ;
 }
 &.inactive:hover{
-    background: ${({theme}) => theme === 'light' ? '#eee' : '#34210a'};
+    background: ${({theme}) => theme === 'light' ? '#bcaaa4' : '#34210a'};
 }
 `
 export const StyledHeaderSearchContainer = styled.div<{theme: 'light' | 'dark'}>`

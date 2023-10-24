@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import "./BurgerMenu.css"
 import{ StyledHeaderBurgerContainer,
     StyledHeaderBurgerBtn,} from "./styledBurger"
 import { useDispatch } from 'react-redux';
