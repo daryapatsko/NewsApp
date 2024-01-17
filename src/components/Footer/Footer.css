@@ -1,0 +1,42 @@
+.footer__container{
+    background-color: #5d4037;
+    width: 100%;
+    color: #efebe9;
+}
+.footer__box{
+    gap: 30px;
+    padding: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.links__container{
+    display: flex;
+
+}
+.links__container li{
+    padding-right: 10px;
+}
+
+
+.links-social__container{
+    display: flex;
+
+}
+.links-social__container li{
+    cursor: pointer;
+    padding:5px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.links-social__container li:hover{
+    background-color: rgb(233, 207, 176);
+}
+a{
+    transition: all 0.5s ease-in-out;
+}
+a:hover{
+ color: rgb(233, 207, 176);
+}

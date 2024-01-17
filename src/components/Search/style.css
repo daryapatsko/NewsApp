@@ -1,0 +1,44 @@
+.search__category__container{
+    display: flex;
+}
+.search__container{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.search__container.dark-theme{
+    color:#fff;
+}
+.search_box{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+select:focus option {
+    color: #000000;
+  }
+.link__container{
+    padding: 10px 0;
+}
+.search__category{
+    padding-right:10px ;
+    font-weight: 700;
+}
+
+.input__search{
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+width: 80%;
+color:#34210a;
+
+}
+.input__search::placeholder{
+   color:#432602;
+}
+.news__item{
+    max-width: 750px;
+    margin: 10px auto;
+}
