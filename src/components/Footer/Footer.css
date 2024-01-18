@@ -21,9 +21,12 @@
 
 .links-social__container{
     display: flex;
+    align-items: center;
 
 }
 .links-social__container li{
+    display: flex;
+    align-items: center;
     cursor: pointer;
     padding:5px;
     margin: 10px;
