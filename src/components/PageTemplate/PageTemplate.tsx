@@ -10,13 +10,14 @@ import SwitchTheme from './SwitchTheme/SwitchTheme'
 
 interface IPageTemplate {
   children?: ReactNode,
+  style?: React.CSSProperties,
 }
 
-const PageTemplate: FC<IPageTemplate> = ({ children }) => {
+const PageTemplate: FC<IPageTemplate> = ({ children,style }) => {
   const isLoading = useSelector(({ isLoading }) => isLoading)
   const theme = useSelector(({ theme }) => theme)
   return (
-    <StyledPageTemplateContainer theme={theme}>
+    <StyledPageTemplateContainer theme={theme} style= {style}>
       <Header />
       <SwitchTheme/>
       <main>

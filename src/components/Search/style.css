@@ -31,8 +31,8 @@ select:focus option {
     padding: 10px;
     border-radius: 10px;
     outline: none;
-width: 80%;
-color:#34210a;
+    width: 80%;
+    color:#34210a;
 
 }
 .input__search::placeholder{

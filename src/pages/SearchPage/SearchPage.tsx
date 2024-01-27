@@ -4,7 +4,7 @@ import Search from '../../components/Search/Search'
 
 const SearchPage = () => {
   return (
-    <PageTemplate>
+    <PageTemplate style={{ height: '100vh'}}>
       <Search/>
     </PageTemplate>
   )

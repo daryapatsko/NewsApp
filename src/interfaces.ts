@@ -15,7 +15,7 @@ export interface INewsItem {
     },
     title: string,
     url: string,
-    urlToImage: string,
+    image: string,
 }
 export type ThemeProp = {
     onClick:(e:MouseEvent<SVGElement>) => void;

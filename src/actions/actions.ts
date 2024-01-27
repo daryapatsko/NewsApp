@@ -6,13 +6,13 @@ export const GET_NEWS = (category: string, page: number) => {
    
     return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
         dispatch({ type: "SET_LOADING" });
-
         try {
-               instance.get(`/top-headlines?country=us&category=${category}&apiKey=542e32be1e794c138b9585c2394f2515&pageSize=10&page=${page}`)
+            instance.get(`/top-headlines?category=${category}&country=ua&apikey=f23ba73edd67d1a8191a22425256d0e7`)
                 .then((data) => {
                     const newsList = data.data.articles
+                    console.log(data)
                     dispatch({ type: "SET_NEWS_LIST", payload: newsList });
-                    dispatch({ type: "SET_TOTAL_COUNT", payload: data.data.totalResults });
+                    // dispatch({ type: "SET_TOTAL_COUNT", payload: data.data.totalArticles });
                 })
         } catch (err) {
             console.log(err);
@@ -27,7 +27,7 @@ export const GET_SEARCH_NEWS = (categorySearch: string) => {
         dispatch({ type: "SET_LOADING" });
 
         try {
-            instance.get(`/top-headlines?country=us&category=${categorySearch}&apiKey=542e32be1e794c138b9585c2394f2515&pageSize=100`)
+            instance.get(`/top-headlines?category=${categorySearch}&lang=en&country=us&apikey=f23ba73edd67d1a8191a22425256d0e7&pageSize=100`)
                 .then((data) => {
                     console.log(data.data.articles)
                     const searchNews = data.data.articles

@@ -46,6 +46,8 @@ const Search = () => {
                         <option value='science'>science</option>
                         <option value='sports'>sports</option>
                         <option value='technology'>technology</option>
+                        <option value='world'>world</option>
+                        <option value='nation'>Nation</option>
                     </select>
                 </div>
 

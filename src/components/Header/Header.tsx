@@ -28,6 +28,8 @@ const links = [
   { id: 5, name: "Science", value: "science" },
   { id: 6, name: "Sports", value: "sports" },
   { id: 7, name: "Technology", value: "technology" },
+  { id: 8, name: "World", value: "world" },
+  { id: 9, name: "Nation", value: "nation" },
 ]
 const Header = () => {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();

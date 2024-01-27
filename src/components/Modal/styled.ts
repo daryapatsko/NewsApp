@@ -31,8 +31,7 @@ padding:20px;
 color:#fff;
 z-index:5;
 border-radius:10px;
-background-color:grey;
-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.8);
+background-color:#00B4D9;
 
 `
 export const StyledModalImgBox= styled.img`
@@ -56,13 +55,14 @@ export const StyledModalBtnClose= styled.button`
 border:none;
 padding:10px;
 display:block;
-background-color:inherit;
+border: 2px solid #FFF;
+border-radius:10px;
 cursor:pointer;
 max-width:70px;
 margin:0 auto;
+transition: all 0.5s ease-in-out;
 &:hover{
-    background-color:#fff;
-    border-radius:10px;
+    background-color:#92DFEC;
 }
 
 `

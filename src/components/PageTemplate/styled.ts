@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const StyledPageTemplateContainer = styled.div<{theme: 'light' | 'dark'}>`
 padding:0 20px;
-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-background-color: ${({theme}) => theme === 'light' ? '#d7ccc8' : '#3e2723'};
+background-color: ${({theme}) => theme === 'light' ? '#FFF' : '#03045F'};
 `

@@ -8,9 +8,6 @@ import { GET_NEWS } from './actions/actions';
 import { useDispatch,useSelector } from 'react-redux';
 import {Routes, Route, useNavigate} from "react-router-dom"
 
-
-
-
 function App() {
   const dispatch = useDispatch<ThunkDispatch<any, {}, AnyAction>>();
   const navigate = useNavigate()

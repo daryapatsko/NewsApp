@@ -58,31 +58,30 @@ transition:all 0.5s ease-in-out;
 `
 
 export const StyledHeaderNavItem = styled.li<{theme: 'light' | 'dark'}>`
-padding:10px;
+padding:10px 20px;
 cursor:pointer;
 margin:5px;
 border-radius:2em;
-background-color:${({theme}) => theme === 'light' ? '#8d6e63' : '#a1887f'};
-transition: all 0.3s;
+border:2px solid ${({theme}) => theme === 'light' ? '#CAF0F8' : '#0078B6'};
+transition: all 0.5s ease-in-out;
 color: ${({theme}) => theme === 'light' ? '#000000' : '#fff'};
-&:hover{
-    background-color: ${({theme}) => theme === 'light' ? 'yellow' : '#6d4c41'};
-}
 &.active{
-    background-color: #5d4037;
-    ;
+    background-color: ${({theme}) => theme === 'light' ? '#CAF0F8' : '#fff'};
+    color:${({theme}) => theme === 'light' ? '#FFF' : '#03045F'};
 }
 &.inactive:hover{
-    background: ${({theme}) => theme === 'light' ? '#bcaaa4' : '#34210a'};
+    color: ${({theme}) => theme === 'light' ? '#FFF' : '#03045F'};
+    background: ${({theme}) => theme === 'light' ? '#CAF0F8' : '#FFF'};
 }
 `
 export const StyledHeaderSearchContainer = styled.div<{theme: 'light' | 'dark'}>`
 object-fit:cover;
 padding:5px;
 border-radius:10px;
-background-color: ${({theme}) => theme === 'light' ? '' : '#dfcece'};
+background-color: ${({theme}) => theme === 'light' ? '' : '#CAF0F8'};
+transition: all 0.5s ease-in-out;
 &:hover{
-    background-color: ${({theme}) => theme === 'light' ? '#dfcece' : '#432602'};
+    background-color: ${({theme}) => theme === 'light' ? '#CAF0F8' : '#03045F'};
    
 }
 @media screen and (max-width: 768px) {

@@ -1,8 +1,9 @@
 .footer__container{
-    background-color: #5d4037;
+    background-color: #0078B6;
     width: 100%;
-    color: #efebe9;
+    color: #000;
 }
+
 .footer__box{
     gap: 30px;
     padding: 1.5em;
@@ -35,7 +36,7 @@
     transition: all 0.3s ease-in-out;
 }
 .links-social__container li:hover{
-    background-color: rgb(233, 207, 176);
+    background-color:#90E0EE;
 }
 a{
     transition: all 0.5s ease-in-out;

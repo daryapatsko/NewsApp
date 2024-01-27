@@ -26,7 +26,7 @@ const NewsItem:React.FC<{item:INewsItem}> = ({ item }) => {
     <div className={newClassTheme} key={key}>
       <div className='news-item__box'>
         <div className="news-item__img">
-          <img src={item.urlToImage} alt={item.title} />
+          <img src={item.image} alt={item.title} />
         </div>
         <div className="news-item__content">
           <div className="news-item__source">
@@ -41,7 +41,7 @@ const NewsItem:React.FC<{item:INewsItem}> = ({ item }) => {
             <p className='publish'>Published At:</p>
             <p className='time__publish'>{formatTime}</p>
           </div>
-          <button className="news-item__view-more" onClick={handleViewMoreClick}>View More</button>
+          <button className={`news-item__view-more ${theme === 'dark' ? "dark-theme" : 'light-theme'}`} onClick={handleViewMoreClick}>View More</button>
         </div>
       </div>
       {isOpenModal && (

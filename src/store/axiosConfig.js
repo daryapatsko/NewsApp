@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'https://newsapi.org/v2', // Replace with your API base URL
+    baseURL: 'https://gnews.io/api/v4', 
   });
 
   instance.interceptors.request.use(

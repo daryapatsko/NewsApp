@@ -26,7 +26,7 @@ const Modal = ({ item, closeModal }: IModal) => {
         <StyledModalContainer>
             <StyledModalBox>
                 <StyledModal>
-                    <StyledModalImgBox src={item.urlToImage} alt={item.title} />
+                    <StyledModalImgBox src={item.image} alt={item.title} />
                     <StyledModalLink><Link to={item.url}>{item.source.name}</Link></StyledModalLink>
                     
                     <StyledModalTitle>{item.title}</StyledModalTitle>
