@@ -14,7 +14,7 @@ height:40px;
 transition: all 0.3s ease-in-out;
 border: none;
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1220px) {
    display: flex;
  }
 
@@ -23,7 +23,7 @@ export const StyledHeaderBurgerBtn = styled.div`
 
 width:40px;
 height:3px;
-background:#795548;
+background:#000;
 border-radius:10px;
 transition: all 0.3s ease-in-out;
 
@@ -37,7 +37,7 @@ margin-right:auto;
 width:40px;
 height:4px;
 border-radius:10px;
-background-color:#795548;
+background-color:#000;
 transform:translateY(-14px);
 transition: all 0.3s ease-in-out;
 
@@ -52,7 +52,7 @@ transition: all 0.3s ease-in-out;
    width:40px;
    height:4px;
    border-radius:10px;
-   background-color:#795548;
+   background-color:#000;
    transform:translateY(14px);
    transition: all 0.3s ease-in-out;
 }

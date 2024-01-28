@@ -24,7 +24,6 @@ background-color: ${({theme}) => theme === 'light' ? 'none' : '#fff'};
 export const StyledHeaderImg = styled.img`
 object-fit:cover;
 width:100%;
-
 `
 
 export const StyledHeaderNavBar = styled.nav`
@@ -34,11 +33,11 @@ justify-content:center;
 align-items: center;
 `
 export const StyledHeaderNavList = styled.ul`
-padding:20px;
 list-style:none;
 display:flex;
+gap:5px;
 transition:all 0.5s ease-in-out;
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1220px) {
     display: flex;
     flex-direction:column;
     justify-content:center;
@@ -53,6 +52,7 @@ transition:all 0.5s ease-in-out;
     
     &.open{
         left:0;
+        padding:20px;
     }
   }
 `
@@ -60,7 +60,6 @@ transition:all 0.5s ease-in-out;
 export const StyledHeaderNavItem = styled.li<{theme: 'light' | 'dark'}>`
 padding:10px 20px;
 cursor:pointer;
-margin:5px;
 border-radius:2em;
 border:2px solid ${({theme}) => theme === 'light' ? '#CAF0F8' : '#0078B6'};
 transition: all 0.5s ease-in-out;
@@ -84,7 +83,7 @@ transition: all 0.5s ease-in-out;
     background-color: ${({theme}) => theme === 'light' ? '#CAF0F8' : '#03045F'};
    
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1220px) {
     width:100%;
    }
 `

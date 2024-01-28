@@ -7,7 +7,7 @@ export const GET_NEWS = (category: string, page: number) => {
     return async (dispatch: ThunkDispatch<any, {}, AnyAction>) => {
         dispatch({ type: "SET_LOADING" });
         try {
-            instance.get(`/top-headlines?category=${category}&country=ua&apikey=f23ba73edd67d1a8191a22425256d0e7`)
+            instance.get(`/top-headlines?category=${category}&country=us&apikey=f23ba73edd67d1a8191a22425256d0e7`)
                 .then((data) => {
                     const newsList = data.data.articles
                     console.log(data)
