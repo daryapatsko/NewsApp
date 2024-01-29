@@ -1,6 +1,6 @@
 
 
-This [NewsApp](https://sparkly-cat-f1566e.netlify.app/general) is powered by the [GNews](https://gnews.io/) public API and provides users with the latest news articles from around the world. The app offers a user-friendly interface where news articles are organized by categories, allowing users to easily browse and read articles of their interest.
+This [NewsApp](https://sparkly-cat-f1566e.netlify.app/) is powered by the [GNews](https://gnews.io/) public API and provides users with the latest news articles from around the world. The app offers a user-friendly interface where news articles are organized by categories, allowing users to easily browse and read articles of their interest.
 
 **Features** \
 * **Category-based News:** The app organizes news articles into different categories, such as entertainment, business, sports, technology, health, science, and more. Users can select a category and view articles that belong to it.
